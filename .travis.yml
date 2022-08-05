@@ -11,8 +11,8 @@ script:
   - docker run -e CI=true rohitmahindrakar/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t rohitmahindrakar/multi-client ./client
   - docker build -t rohitmahindrakar/multi-nginx ./nginx
+  - docker build -t rohitmahindrakar/multi-client ./client
   - docker build -t rohitmahindrakar/multi-server ./server
   - docker build -t rohitmahindrakar/multi-worker ./worker
   #log in to the docker CLI
